@@ -1,0 +1,24 @@
+QueueFor
+========
+
+Provides an orderable queue of content that works with :yield
+
+Example
+=======
+
+Block Form - - - -
+
+  <%queue_for :name=>"sidebar" do%>
+    <div class="sb_block">Awesome Content</div>
+  <%end%>
+
+String Form (say in a helper) - - - -
+
+  queue_for({:name => "sidebar", :index=>1, :content=>more_content_for_sidebar})
+
+Finally in layouts/application.html.erb
+
+  <div class="sb"><%= yield :sidebar -%></div>
+
+
+Copyright (c) 2009 [mumboe.com] released under the MIT license
