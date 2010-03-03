@@ -1,7 +1,14 @@
 class ContentQueue
+  
+  include Enumerable
+  
   def initialize(*args,&block)
     @index = 0
     @li = []
+  end
+  
+  def each
+    @li.each {|i| yield i }
   end
 
   def []=(key,value)
